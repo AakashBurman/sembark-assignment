@@ -1,3 +1,5 @@
+export const COMPANY_NAME = "Sembark";
+
 export const fallbackImage = "/images/default-fallback-image.png";
 
 export const initialProductData = {
@@ -11,5 +13,3 @@ export const initialProductData = {
     name: "",
   },
 };
-
-export const COMPANY_NAME = "Sembark";

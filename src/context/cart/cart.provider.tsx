@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-
+import { toast } from "sonner";
 import type { CartItem, CartProviderProps } from "../../types/cart";
-
 import { CartContext } from "./cart.context";
 
 export const CartProvider = ({ children }: CartProviderProps) => {
@@ -16,6 +15,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       const existingItem = prev.find((cartItem) => cartItem.id === item.id);
 
       if (existingItem) {
+        toast.success("Item quantity updated in cart");
         return prev.map((cartItem) =>
           cartItem.id === item.id
             ? {
@@ -26,16 +26,19 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         );
       }
 
+      toast.success("Item added to cart");
       return [...prev, item];
     });
   }, []);
 
   const removeFromCart = useCallback((id: number) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
+    toast.success("Item removed from cart");
   }, []);
 
   const clearCart = useCallback(() => {
     setCartItems([]);
+    toast.success("Cart cleared");
   }, []);
 
   const totalItems = useMemo(() => {

@@ -1,8 +1,8 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useCart } from "../context/cart";
 import { fallbackImage } from "../utils/constant";
-import { Link } from "react-router-dom";
 import { ROUTES } from "../utils/routeConstant";
 
 const CartPage = () => {
@@ -45,7 +45,6 @@ const CartPage = () => {
                 key={item?.id}
                 className="group relative flex flex-col gap-5 rounded-3xl bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:flex-row"
               >
-                {/* Remove Button */}
                 <button
                   onClick={() => removeFromCart?.(item?.id)}
                   className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-red-200 bg-white text-lg text-red-500 opacity-0 shadow-sm transition-all duration-300 hover:scale-110 hover:bg-red-50 group-hover:opacity-100"
@@ -90,7 +89,6 @@ const CartPage = () => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                      {/* Price */}
                       <div className="text-right">
                         <p className="text-sm text-gray-500">Price</p>
 
@@ -106,7 +104,6 @@ const CartPage = () => {
           </div>
         </div>
 
-        {/* Right Section */}
         <div className="h-fit rounded-3xl bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-bold text-black">Order Summary</h2>
 
