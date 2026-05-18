@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# sembark-assignment
-
-A basic e-commerce web application where users can browse products, view detailed product information, and add or remove items from the cart.
-=======
 # Sembark Assignment
 
 A modern e-commerce web application built using React, TypeScript, Vite, Tailwind CSS, React Query, and Context API.
@@ -270,4 +265,3 @@ Cart is currently managed using Context API.
 # Author
 
 Aakash Burman
->>>>>>> 3620d4ee919040add4e0f1a3aa63a45c2cabbb66
