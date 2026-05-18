@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -71,3 +72,7 @@ export default defineConfig([
   },
 ])
 ```
+=======
+# sembark-assignment
+A basic e-commerce web application where users can browse products, view detailed product information, and add or remove items from the cart.
+>>>>>>> 7e45aeb46aaf0e349f5d02a58b45797000b9d256
