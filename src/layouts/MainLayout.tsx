@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const MainLayout = () => {
@@ -7,11 +6,9 @@ const MainLayout = () => {
     <>
       <Header />
 
-      <main>
+      <main className="p-20 w-full">
         <Outlet />
       </main>
-
-      <Footer />
     </>
   );
 };
