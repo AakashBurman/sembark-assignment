@@ -1,6 +1,6 @@
 describe("Home Page", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173");
+    cy.visit("/");
   });
 
   it("loads homepage successfully", () => {

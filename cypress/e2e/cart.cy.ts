@@ -1,6 +1,6 @@
 describe("Cart", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173");
+    cy.visit("/");
   });
 
   it("adds product to cart", () => {

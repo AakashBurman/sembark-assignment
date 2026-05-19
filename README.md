@@ -1,6 +1,14 @@
 # Sembark Assignment
 
-A modern e-commerce web application built using React, TypeScript, Vite, Tailwind CSS, React Query, and Context API.
+A modern e-commerce web application built using React, TypeScript, Vite, Tailwind CSS, React Query, Context API, and Cypress.
+
+---
+
+# Repository
+
+```txt
+https://github.com/AakashBurman/sembark-assignment
+```
 
 ---
 
@@ -66,9 +74,9 @@ A modern e-commerce web application built using React, TypeScript, Vite, Tailwin
 # Filtering & Search
 
 - Product search by title
-- Category based filtering
+- Category-based filtering
 - Price range filtering
-- URL synced filters
+- URL-synced filters
 - Shareable filtered URLs
 - Debounced search input
 - Clear filters support
@@ -93,7 +101,19 @@ Supports:
 
 - Cart managed using Context API
 - Server state managed using React Query
-- URL based filter state management
+- URL-based filter state management
+
+---
+
+# Data Fetching
+
+React Query is used for:
+
+- API caching
+- Background refetching
+- Loading state management
+- Error handling
+- Optimized server state management
 
 ---
 
@@ -132,7 +152,7 @@ Product Detail Page
 - Reusable component architecture
 - API abstraction layer
 - Custom React Query hooks
-- URL driven filter state
+- URL-driven filter state
 - Debounced API search
 - Reusable error handling
 - Responsive layout system
@@ -202,6 +222,7 @@ yarn dev
 yarn build
 yarn preview
 yarn cypress
+yarn cypress:run
 yarn test:e2e
 ```
 
@@ -239,7 +260,7 @@ yarn preview
 
 # Cypress Setup
 
-Run Cypress UI:
+Run Cypress UI mode:
 
 ```bash
 yarn cypress
@@ -251,6 +272,22 @@ Run Cypress headless tests:
 yarn test:e2e
 ```
 
+## Automated E2E Setup
+
+The project uses `start-server-and-test` to automatically:
+
+- Start the Vite development server
+- Wait for the application to become available
+- Execute Cypress tests
+
+This allows running all E2E tests using a single command.
+
+---
+
+# Testing Strategy
+
+The application uses Cypress end-to-end testing to validate critical user flows and application behavior.
+
 ---
 
 # E2E Testing
@@ -260,7 +297,7 @@ Application includes Cypress end-to-end testing for:
 - Product listing
 - Product detail navigation
 - Add to cart flow
-- URL synced filters
+- URL-synced filters
 - Filter persistence
 - Search functionality
 
@@ -279,6 +316,7 @@ src/
 ├── pages/
 ├── routes/
 ├── services/
+├── types/
 ├── utils/
 │
 ├── App.tsx
@@ -287,6 +325,8 @@ src/
 cypress/
 │
 ├── e2e/
+├── screenshots/
+└── support/
 ```
 
 ---
@@ -319,7 +359,7 @@ Features:
 
 Application includes:
 
-- Full screen loader
+- Full-screen loader
 - Error page
 - Empty product state
 - Empty cart state
@@ -341,7 +381,7 @@ Includes:
 - Responsive filters section
 - Responsive product grids
 - Adaptive cart layout
-- Mobile first responsive design
+- Mobile-first responsive design
 
 ---
 
@@ -350,8 +390,12 @@ Includes:
 ## API Limitation Note
 
 The assignment requirement mentioned multi-category filtering support.
-However, the provided API only supports filtering by a single categoryId at a time and does not support multiple category IDs in a single request.
+
+However, the provided API only supports filtering by a single `categoryId` at a time and does not support multiple category IDs in a single request.
+
 Because of this limitation, category filtering has been implemented as a single-select filter to ensure stable API behavior and prevent inconsistent results.
+
+A custom backend or aggregated client-side filtering approach would be required to fully support multi-category filtering.
 
 ---
 
