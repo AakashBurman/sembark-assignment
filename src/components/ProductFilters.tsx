@@ -15,7 +15,7 @@ const ProductFilters = ({
   searchValue,
   resetFilters,
 }: ProductFiltersType) => {
-  const [showFilters, setShowFilters] = useState(true);
+  const [showFilters, setShowFilters] = useState(false);
 
   const activeFiltersCount = useMemo(() => {
     return [filters.categories.length, filters.price_min, filters.title].filter(
