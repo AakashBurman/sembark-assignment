@@ -25,7 +25,10 @@ const Header = () => {
           >
             <ShoppingCart />
             {!!totalItems && (
-              <div className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-black text-xs text-white">
+              <div
+                className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-black text-xs text-white"
+                data-testid="cart-count"
+              >
                 {totalItems}
               </div>
             )}

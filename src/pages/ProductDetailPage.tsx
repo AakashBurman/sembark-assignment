@@ -47,7 +47,7 @@ const ProductDetails = () => {
   return isError ? (
     <ErrorPage message="No products found." />
   ) : (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col" data-testid="product-detail">
       <div className="mb-4">
         <button
           onClick={() => navigate(ROUTES.HOME)}
@@ -138,6 +138,7 @@ const ProductDetails = () => {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <button
+                data-testid="add-to-cart"
                 onClick={handleAddToCart}
                 className="rounded-2xl bg-black px-8 py-4 text-sm font-medium text-white transition hover:bg-gray-800 cursor-pointer"
               >
