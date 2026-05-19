@@ -10,7 +10,7 @@ import { priceOptions } from "../utils/constant";
 const ProductFilters = ({
   setFilters,
   filters,
-  categories,
+  categories = [],
   setSearchValue,
   searchValue,
   resetFilters,
@@ -24,7 +24,7 @@ const ProductFilters = ({
   }, [filters]);
 
   const categoryOptions = useMemo(() => {
-    return categories.map((category) => ({
+    return categories?.map((category) => ({
       value: category.id,
       label: category.name,
     }));
@@ -81,6 +81,7 @@ const ProductFilters = ({
           </div>
 
           <button
+            data-testid="toggle-filters"
             onClick={() => setShowFilters((prev) => !prev)}
             className="flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
           >
@@ -96,13 +97,13 @@ const ProductFilters = ({
       </div>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ${
+        className={`transition-all duration-300 ${
           showFilters ? "max-h-100 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1.2fr_220px_1fr_auto]">
-            <div>
+            <div data-testid="category-filter">
               <label
                 htmlFor="categories"
                 className="mb-2 block text-sm font-medium text-gray-700"
@@ -120,7 +121,7 @@ const ProductFilters = ({
               />
             </div>
 
-            <div>
+            <div data-testid="price-filter">
               <label
                 htmlFor="price"
                 className="mb-2 block text-sm font-medium text-gray-700"

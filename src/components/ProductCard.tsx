@@ -13,6 +13,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <button
+      data-testid="product-link"
       onClick={handleView}
       className="group overflow-hidden cursor-pointer rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
     >
