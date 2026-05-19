@@ -347,6 +347,14 @@ Includes:
 
 # Important Notes
 
+## API Limitation Note
+
+The assignment requirement mentioned multi-category filtering support.
+However, the provided API only supports filtering by a single categoryId at a time and does not support multiple category IDs in a single request.
+Because of this limitation, category filtering has been implemented as a single-select filter to ensure stable API behavior and prevent inconsistent results.
+
+---
+
 ## Tailwind Dynamic Class Issue
 
 Dynamic Tailwind classes were replaced with inline styles where needed to avoid Tailwind purge/build issues.
