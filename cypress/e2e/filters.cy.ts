@@ -1,6 +1,6 @@
 describe("Filters", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173");
+    cy.visit("/");
   });
 
   it("updates URL when category filter changes", () => {

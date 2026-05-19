@@ -1,6 +1,6 @@
 describe("Product Detail", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173");
+    cy.visit("/");
   });
 
   it("navigates to product detail page", () => {
