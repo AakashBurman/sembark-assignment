@@ -12,7 +12,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <div className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <button
+      onClick={handleView}
+      className="group overflow-hidden cursor-pointer rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+    >
       <div className="relative aspect-square overflow-hidden bg-gray-100">
         <LazyLoadImage
           onError={(e) => {
@@ -41,14 +44,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <p className="text-2xl font-bold text-black">${product.price}</p>
 
           <button
-            className="rounded-xl bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800"
+            className="rounded-xl bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800 cursor-pointer"
             onClick={handleView}
           >
             View
           </button>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 
