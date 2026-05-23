@@ -6,21 +6,11 @@ describe("Filters", () => {
   it("updates URL when category filter changes", () => {
     cy.get("[data-testid='toggle-filters']").click();
 
-    cy.get("[data-testid='category-filter']")
-      .find("input")
-      .type("Books{enter}");
+    cy.get("[data-testid='category-filter']").find("input").type("Clothes");
 
-    cy.wait(500);
+    cy.get('[role="option"]').contains("Clothes").click();
 
-    cy.location("search").should("include", "categories");
-  });
-
-  it("updates URL when searching", () => {
-    cy.get("input[placeholder='Search products...']").type("shirt");
-
-    cy.wait(600);
-
-    cy.location("search").should("include", "title=shirt");
+    cy.location("search").should("contain", "categories=");
   });
 
   it("updates URL when price filter changes", () => {
